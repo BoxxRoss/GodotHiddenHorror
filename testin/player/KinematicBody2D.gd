@@ -2,8 +2,9 @@ extends KinematicBody2D
 
 
 var movespeed = 200
-var bulletspeed = 1000
-var bullet = preload("res://Bullet.tscn")
+var bullet_speed = 750
+var bullet = preload("res://player/bulletscene.tscn")
+
 
 func _ready():
 	pass # Replace with function body.
@@ -29,10 +30,18 @@ func _physics_process(delta):
 
 func fire ():
 	var bullet_instance = bullet.instance()
-	bullet_instance.position = get_global_position()
+	bullet_instance.position = $bulletpoint.get_global_position()
 	bullet_instance.rotation_degrees = rotation_degrees
-	bullet_instance.apply_impulse(Vector2(),Vector2(bulletspeed,0).rotated(rotation))
+	bullet_instance.apply_impulse(Vector2(),Vector2(bullet_speed,0).rotated(rotation))
 	get_tree().get_root().call_deferred("add_child", bullet_instance)
 	
+func kill():
+	get_tree().reload_current_scene()
 	
 	
+
+
+
+func _on_Area2D_body_entered(body):
+	if "enemy" in body.name:
+		kill()

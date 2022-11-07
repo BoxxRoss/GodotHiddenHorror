@@ -22,7 +22,7 @@ position = Vector2( 1391, 229 )
 scale = Vector2( 109.125, 61.1875 )
 texture = ExtResource( 4 )
 
-[node name="KinematicBody2D" parent="." index="1" groups=["player"]]
+[node name="KinematicBody2D" parent="." index="1"]
 position = Vector2( 302, 171 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D" index="3"]
@@ -40,11 +40,13 @@ shadow_enabled = true
 [node name="bulletpoint" type="Node2D" parent="KinematicBody2D" index="5"]
 position = Vector2( 16, 0 )
 
-[node name="enemy" type="KinematicBody2D" parent="." index="2"]
+[node name="enemy" type="KinematicBody2D" parent="." index="2" groups=["player"]]
 position = Vector2( 335, 415 )
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy" index="0" groups=["Enviroment"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy" index="0" groups=["player"]]
 shape = SubResource( 1 )
 
 [node name="Icon" type="Sprite" parent="enemy" index="1"]
@@ -56,16 +58,18 @@ texture = ExtResource( 2 )
 [node name="Area2D" type="Area2D" parent="enemy" index="2"]
 position = Vector2( 0.5, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy/Area2D" index="0" groups=["Enviroment"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy/Area2D" index="0" groups=["player"]]
 position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 
-[node name="enemy2" type="KinematicBody2D" parent="." index="3"]
+[node name="enemy2" type="KinematicBody2D" parent="." index="3" groups=["player"]]
 position = Vector2( -21, 376 )
 rotation = -2.61799
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy2" index="0" groups=["Enviroment"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy2" index="0" groups=["player"]]
 shape = SubResource( 1 )
 
 [node name="Icon" type="Sprite" parent="enemy2" index="1"]
@@ -77,16 +81,18 @@ texture = ExtResource( 2 )
 [node name="Area2D" type="Area2D" parent="enemy2" index="2"]
 position = Vector2( 0.5, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy2/Area2D" index="0" groups=["Enviroment"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy2/Area2D" index="0" groups=["player"]]
 position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 
-[node name="enemy3" type="KinematicBody2D" parent="." index="4"]
+[node name="enemy3" type="KinematicBody2D" parent="." index="4" groups=["player"]]
 position = Vector2( -11, 474 )
 rotation = -2.61799
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy3" index="0" groups=["Enviroment"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy3" index="0" groups=["player"]]
 shape = SubResource( 1 )
 
 [node name="Icon" type="Sprite" parent="enemy3" index="1"]
@@ -98,16 +104,18 @@ texture = ExtResource( 2 )
 [node name="Area2D" type="Area2D" parent="enemy3" index="2"]
 position = Vector2( 0.5, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy3/Area2D" index="0" groups=["Enviroment"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy3/Area2D" index="0" groups=["player"]]
 position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 
-[node name="enemy4" type="KinematicBody2D" parent="." index="5"]
+[node name="enemy4" type="KinematicBody2D" parent="." index="5" groups=["player"]]
 position = Vector2( 86, 496 )
 rotation = -2.61799
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy4" index="0" groups=["Enviroment"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy4" index="0" groups=["player"]]
 shape = SubResource( 1 )
 
 [node name="Icon" type="Sprite" parent="enemy4" index="1"]
@@ -119,16 +127,18 @@ texture = ExtResource( 2 )
 [node name="Area2D" type="Area2D" parent="enemy4" index="2"]
 position = Vector2( 0.5, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy4/Area2D" index="0" groups=["Enviroment"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy4/Area2D" index="0" groups=["player"]]
 position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 
-[node name="enemy5" type="KinematicBody2D" parent="." index="6"]
+[node name="enemy5" type="KinematicBody2D" parent="." index="6" groups=["player"]]
 position = Vector2( 869, -14 )
 rotation = -2.61799
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy5" index="0" groups=["Enviroment"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy5" index="0" groups=["player"]]
 shape = SubResource( 1 )
 
 [node name="Icon" type="Sprite" parent="enemy5" index="1"]
@@ -140,16 +150,18 @@ texture = ExtResource( 2 )
 [node name="Area2D" type="Area2D" parent="enemy5" index="2"]
 position = Vector2( 0.5, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy5/Area2D" index="0" groups=["Enviroment"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy5/Area2D" index="0" groups=["player"]]
 position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 
-[node name="enemy6" type="KinematicBody2D" parent="." index="7"]
+[node name="enemy6" type="KinematicBody2D" parent="." index="7" groups=["player"]]
 position = Vector2( 476, 58 )
 rotation = -1.57079
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy6" index="0" groups=["Enviroment"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy6" index="0" groups=["player"]]
 shape = SubResource( 1 )
 
 [node name="Icon" type="Sprite" parent="enemy6" index="1"]
@@ -161,11 +173,11 @@ texture = ExtResource( 2 )
 [node name="Area2D" type="Area2D" parent="enemy6" index="2"]
 position = Vector2( 0.5, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy6/Area2D" index="0" groups=["Enviroment"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy6/Area2D" index="0" groups=["player"]]
 position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 
-[node name="TileMap" type="TileMap" parent="." index="8"]
+[node name="TileMap" type="TileMap" parent="." index="8" groups=["player"]]
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 16, 16 )
 format = 1
